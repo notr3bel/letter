@@ -1,32 +1,82 @@
 <!DOCTYPE html>
-<html lang=""en>    
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width">
-    <title>Ammuuu</title>
-    <link rel="stylesheet" href="Style3.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Book</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: pink;
+            font-family: Arial, sans-serif;
+        }
+        .book-container {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            perspective: 1200px;
+        }
+        .page {
+            width: 50%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            background-color: white;
+            color: black;
+            padding: 20px;
+            position: absolute;
+        }
+        .left-page {
+            background-color: red;
+            color: white;
+            font-size: 24px;
+            font-weight: bold;
+            transform-origin: left;
+            transition: transform 1s ease-in-out;
+            z-index: 3;
+            left: 50%;
+            transform: translateX(-100%);
+        }
+        .book-container.open .left-page {
+            transform: translateX(-100%) rotateY(-160deg);
+            box-shadow: -5px 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .right-page {
+            font-size: 18px;
+            flex-direction: column;
+            z-index: 2;
+            left: 50%;
+            transform: translateX(-100%);
+        }
+    </style>
 </head>
 <body>
-    <div class="envelope">
-        <div class="back"></div>
-        <div class="letter">
-            <div class="heart"></div>
-            <div class="text">
-                <p>Heyyy Gorgeous!!!<br>
-              You are the special Women of my life<br>
-                who will someday be my wife👀❤️.<br>
-                Heres a small gift for You!</p>
-                <a href="new.html">Click Here</a>   
-            </div>
+    <div class="book-container" onclick="toggleBook()">
+        <div class="page left-page" id="leftPage">❤️ Happy Valentine's Day! ❤️</div>
+        <div class="page right-page">
+            <p>"Love is not just about a day, it's about a lifetime of moments shared together."</p>
+            <p>Every beat of my heart whispers your name,<br>
+            Every moment spent with you is a beautiful dream.<br>
+            You are my love, my joy, my forever Valentine.<br>
+            Today and always, I cherish you with all my heart.</p>
+            <p>💖 Heres a small kavidhai from me <a href="new.html">Click Here</a></p>
         </div>
-        <div class="front"></div>
-        <div class="top"></div>
-        <div class="shadow"></div>
-        <div class="text1">
-         <h2>Hey! Listen I Have Something For You
-         </h2>   
-        </div>
-    
     </div>
+
+    <script>
+        function toggleBook() {
+            document.querySelector('.book-container').classList.toggle('open');
+        }
+    </script>
 </body>
 </html>
