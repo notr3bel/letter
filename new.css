@@ -13,7 +13,7 @@ body {
 
 .postcard {
   width: 800px;
-  height: 500px;
+  height: 550px;
   background: rgba(255, 255, 255, 0.101);
 
   margin: 0 auto;
@@ -33,7 +33,7 @@ body {
 
 .postcard1 {
   width: 800px;
-  height: 500px;
+  height: 550px;
   background: #f594b862;
   position: absolute;
   left: 24%;
